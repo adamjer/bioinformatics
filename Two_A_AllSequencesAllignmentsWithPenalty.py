@@ -28,3 +28,6 @@ def gap_function(x, y):  # x is gap position in seq, y is gap length
 alignment = pairwise2.align.globalmc("ACCCCCGT", "ACG", 5, -4, gap_function, gap_function)
 for element in alignment:
     print(format_alignment(*element))
+
+for a in pairwise2.align.globalmd("ACCCGT", "ACG", 2, -1, -.5, -.1):
+    print(format_alignment(*a))
